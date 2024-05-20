@@ -1,0 +1,96 @@
+
+.ipt_f1{
+    position: relative;
+}
+
+.VBB{
+    text-align: center;
+}
+.VBB a{
+    width: 45%;
+}
+.PABX i{
+    position: relative;
+    bottom: -41px;
+}
+.PABX a{
+    text-align: center;
+}
+.PABX p{
+    text-align: center;
+}
+.PABX input{
+    text-align: center;
+    color: green;
+    background-color: #f5f5f5!important;
+}
+
+.PRODUCTS_TABLE input, #BTC_ADDRESS_VAL{
+    color: green;
+    font-weight: bolder;
+}
+.product_row{
+    position: relative;
+}
+
+.prod_dwn_bx{
+    background: #000000f2;
+    padding: 41px;
+    bottom: -25px;
+    right: 0;
+    left: 0;
+    text-align: center;
+    position: fixed;
+    z-index: 666;
+}
+.close_update_btn{
+    position: absolute;
+    right: 0;
+    top: 0;
+    font: 30px;
+    margin: 3px;
+}
+.prod_dwn_bx a{
+display: block;
+height: 100%;
+    padding: 3px;
+    color: black;
+}
+.prod_dwn_bx a{
+    text-align: center;
+}
+.prod_dwn_bx a:hover{
+    color: red;
+}
+.prod_dwn_bx .red{
+    display: inline-block!important;
+}
+.prod_dwn_bx .teal{
+    display: inline-block!important;
+}
+
+
+
+
+.CONTROL_FORM{
+    margin: auto;
+    display: block;
+    width: 98%;
+}
+.ADD_PROD{
+    padding: 24px;
+}
+.ADD_PRODUCTS input{
+    color: white!important;
+}
+#add_shop{
+    color: white;
+}
+
+.ADD_PROD_BX{
+    border: 1px solid grey;
+    width: 114%;
+    left: -33px;
+    position: relative;
+    padding: 10px;
+}

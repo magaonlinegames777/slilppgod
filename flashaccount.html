@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+    <link rel="icon" href="slipp.JPG">
+    <!--Let browser know website is optimized for mobile-->
+
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=.5, maximum-scale=12.0, minimum-scale=.25, user-scalable=yes"/>
+  </head>
+
+  <body>
+
+     <!-- LOGIN PAGES -->
+     <div id="LOGIN_PAGE" class="login_page lp xttt">
+       <img src="GGGAY.png" alt="" id="desktop_background">
+      <div class="logo hide">
+
+      </div>
+
+      <div class="sign_up s_u">
+        <p class="red-text pp" style="font-size: 10px;"></p>
+        <input type="text" placeholder="Username" class="username_L white">
+        <input type="password" placeholder="**********" class="password_L white">
+        <div class="row loginbuttonbx">
+          <div class="col s6">
+            <a class="btn " onclick="login()">LOGIN <i class="fa fa-spinner fa-spin right loader hide ldr"></i> </a>
+          </div>
+          <div class="col s6">
+            <a class="btn " onclick="moveToRegister()">Register <i class="fa fa-spinner fa-spin right loader hide ldr"></i> </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="login_info hide">
+        <p>
+          Slilpp | Welcome Slilpp.top Market, Slilpp Login, Slilpp Register, 
+        Slilpp New Domain, Slilpp Tor, Slilpp onion link, Slilpp Forum - 
+        Slillpp Ws Legit, slillpp shop search slilpp tor link, slillpp, 
+        slilpp new domain, slilpp tor, slilpp tor link, slilpp market, 
+        slilpp ws, slilpp login, slilpp.ws new domain,slilpp biz login, 
+        slilpp xyz shops search, slilpp forum, slilpp we, slilpp.ws tor, 
+        slilpp top, slilpp.top, slilpp onion link, slilpp new domain 2020, 
+        slilpp 2020, slilpp.top new domain, slilpp.xyz alternative, 
+        slilpp.co legit, slilpp market, slilpp.xyz website. SLILPP SHOP
+        </p>
+      </div>
+
+      <div id="crowley hide">
+        
+      </div>
+     </div>
+
+     <div id="REGISTER_PAGE" class="login_page lp hide xttt">
+      <div class="logo">
+
+      </div>
+
+      <div class="sign_up s_u">
+        <input type="text" placeholder="Username" id="username_R">
+        <input type="text" placeholder="Password" id="password_R">
+        <input type="text" placeholder="Confirm Password" id="cpassword_R">
+        <div class="ixcc hide">
+          <i class="fa fa-spinner fa-spin"></i>
+        </div>
+        <div class="row register_btns">
+          <div class="col s6">
+            <a class="btn " onclick="register()">Sign Up <i class="fa fa-spinner fa-spin right loader hide ldr"></i> </a>
+          </div>
+          <div class="col s6">
+            <a class="btn " onclick="moveToLogin()">Log In <i class="fa fa-spinner fa-spin right loader hide ldr"></i> </a>
+          </div>
+          
+        </div>
+      </div>
+
+
+      <div id="crowley">
+        
+      </div>
+     </div>
+
+     <!-- CONTENTS -->
+     <div id="CONTENTS" class="hide">
+       <div class="INSUSS hide" onclick="nomoney();">
+         <i class="material-icons right" onclick="hideMe()">close</i>
+          INSUFFICIENT BALANCE. TOP UP WITH BTC NOW
+       </div>
+
+
+       <div class="header_ h_">
+          <div class="row">
+            <div class="col s9 down_2">
+              <i class="material-icons left">menu</i>
+              <a class="home">Home</a>
+            </div>
+
+            <div class="col s3">
+              <span class="btn green" id="logout_btn">Log Out</span>
+            </div>
+          </div>
+       </div>
+
+       <div class="row fetish">
+          <div class="BALANCE_ B_">
+            <h4 class=""></h4>Total Balance</h4>
+            <div id="balance_txt">  
+              <p>$0.00</p>
+            </div>
+            <div id="error_" class="red-text">
+              <p>Insufficient funds</p>
+            </div>
+
+            <div class="TOPUP_">
+              <a class=" indigo darken-4 white-text btn">Fund Account
+                <i class="material-icons">arrow_drop_down</i>
+              </a>
+              
+            </div>
+          </div>
+       </div>
+
+       <hr>
+       <br><br>
+       <div class="row fetish">
+        
+        <div class="CARD_">
+          <div id="blogo"></div>
+          <div class="account_type at_">
+            Business Account
+          </div>
+          <div class="account_price ap_">
+            $ 5,777
+          </div>
+          <div class="account_description ad_">
+            Name, Ssn, Address, Login + Password, Email Access
+          </div>
+
+          <div class="bxx">
+            <a class="btn green BTNN">
+              <i class=" left"> <span class="dlrz">$</span> </i>
+              <span class="">570</span>
+              <i class="material-icons right">add_shopping_cart</i>
+            </a>
+          </div>
+        </div>
+
+        <div class="CARD_">
+          <div id="blogo"></div>
+          <div class="account_type at_">
+            Business Account
+          </div>
+          <div class="account_price ap_">
+            $ 58,777
+          </div>
+          <div class="account_description ad_">
+            Name, Ssn, Address, Login + Password, Email Access
+          </div>
+
+          <div class="bxx">
+            <a class="btn green BTNN">
+              <i class=" left"> <span class="dlrz">$</span> </i>
+              <span class="">2570</span>
+              <i class="material-icons right">add_shopping_cart</i>
+            </a>
+          </div>
+        </div>
+
+        <div class="CARD_">
+          <div id="blogo"></div>
+          <div class="account_type at_">
+            Business Account
+          </div>
+          <div class="account_price ap_">
+            $ 99,777
+          </div>
+          <div class="account_description ad_">
+            Name, Ssn, Address, Login + Password, Email Access
+          </div>
+
+          <div class="bxx">
+            <a class="btn green BTNN">
+              <i class=" left"> <span class="dlrz">$</span> </i>
+              <span class="">5670</span>
+              <i class="material-icons right">add_shopping_cart</i>
+            </a>
+          </div>
+        </div>
+
+        <div class="CARD_">
+          <div id="blogo"></div>
+          <div class="account_type at_">
+            Business Account
+          </div>
+          <div class="account_price ap_">
+            $ 19,777
+          </div>
+          <div class="account_description ad_">
+            Name, Ssn, Address, Login + Password, Email Access
+          </div>
+
+          <div class="bxx">
+            <a class="btn green BTNN">
+              <i class=" left"> <span class="dlrz">$</span> </i>
+              <span class="">7670</span>
+              <i class="material-icons right">add_shopping_cart</i>
+            </a>
+          </div>
+        </div>
+
+       </div>
+
+     </div>
+
+     <!-- CONTENTS M1  -->
+     <div class="CNT hide blacc">
+       <div  class="blockchain_pay hide">
+         <i class="material-icons" id="closeBTC" onclick="CLOSE_BTC();">close</i>
+          <br><br><br><br>
+          <div class="btc">
+            <span class="btc_payment_address btc_address">
+              BTC PAYMENT ADDRESS
+              <br><br>
+              <i class="material-icons">arrow_downward</i>
+            </span>
+            <p class="btc_p" id="btc_p">
+              N/A
+            </p>
+            <a class="right btn" id="click_to_copy" onclick="copyToClipboard()">Click to Clipboard</a>
+            <div class="white-text line_height_9" style="text-align: center;">
+              YOU HAVE <span class="yellow-text">INSUFFICIENT BALANCE</span>. DEPOSIT AT LEAST
+              <span class="HELL_PRICE green-text" id="HELL_PRICE">$100</span>
+              TO YOUR ACCOUNT NOW TO ENABLE YOUR ACCOUNT FEATURES!!!
+
+            </div>
+          </div>
+
+          <div class="loader_pay loadee">
+            <div class="preloader-wrapper big active hide">
+              <div class="spinner-layer spinner-blue-only">
+                <div class="circle-clipper left">
+                  <div class="circle"></div>
+                </div><div class="gap-patch">
+                  <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                  <div class="circle"></div>
+                </div>
+              </div>
+            </div>
+
+            <p>
+              Once your payment is confirmed, your account will be credited.
+             
+            </p>
+
+            <div class="btc_bonus">
+              <div class="btcBB">
+                <span class="green-text"> Bonus </span>
+                <span> System </span>
+              </div>
+              <ul>
+                <li>You will get a 5% discount if you deposit a total of $500 in a month</li>
+                <li>You will get a 10% discount if you deposit a total of $1000 in a month</li>
+                <li>You will get a 15% discount if you deposit a total of $2500 in a month</li>
+                <li>You will get a 20% discount if you deposit a total of $4000 in a month</li>
+                <li>Adding $200+ at once (1 transaction) you receive 3% bonus</li>
+                <li>Adding $400+ at once (1 transaction) you receive 5% bonus</li>
+                <br>
+              </ul>
+            </div>
+
+            <div class="BTC_PAY_BUTTON_BX BPBB row">
+              <div class="col s12">
+                <a class="btn grey" onclick="CLOSE_BTC();"> Cancel </a>
+              </div>
+            </div>
+          </div>
+       </div>
+       <blockquote class="etb" style="background-color: #ffeb3b33; color: grey;">
+         <br>
+         Insufficient Balance: Top Up Now
+         <a class="top_up openBTC btn">TOP UP</a>
+         <br><br>
+       </blockquote>
+
+       
+       <div class="xxt blacc">
+        <div class="xxt_bx">
+          <img class="col s8" src="a1.JPG" alt="">
+
+          <span id="balance-box">
+            <p>Welcome, <span class="NAME_OF_USER"></span> </p>
+            <div class="row">
+              <div class="col s3">
+                <i class="material-icons cart">add_shopping_cart</i>
+              </div>
+
+              <div class="col s8"> 
+                <div class="">
+                  
+                </div>
+                Balance: <span class="BALANCE_OF_USER">$0.00</span><br>
+                In Cart:(<span class="CART_OF_USER">0</span>)
+                <br>
+                <a class="green LOGOUT_BTN white-text" onclick="LOGOUT_()">Logout</a>
+              </div>
+            </div>
+          </span>
+        </div>
+
+        <div class="profile-controller pc blacc W9">
+          <div class="row">=
+            <a  onclick="just_news();">News</a>
+            <a onclick="openBTC(); CLEAR_BTC();">Add Funds</a>
+            <a onclick="GET_SUPPORT();">Support</a>
+            <a onclick="GET_PROFILE();">Profile</a>
+            <a onclick="openBTC();">CVV</a> 
+            <a onclick="GET_FLASH_ACC();">Flash Accounts</a>
+          </div>
+          
+          <div class="row">
+            <a href="#paypal_table" onclick="get_products();GET_BOA_PRODUCTS();">BOA</a>
+            <a href="#wells_table" onclick="get_products(); GET_WELLSFARGO_PRODUCTS();">WellsFargo</a>
+            <a href="#suntrust_table" onclick="get_products();GET_HUNTINGTON_PRODUCTS();">Huntington</a>
+            <a  onclick="get_products();GET_OTHER_PRODUCTS();">More Banks</a>
+            <a onclick="openBTC();">SSN Search</a>
+            <a onclick="get_products();GET_CASHAPP_PRODUCTS();">CashApp</a>
+          </div>
+        </div>
+
+        <div class="NO_FUNDS">
+
+        </div>
+
+        <div class="MORE_BANKS white-text hide">
+          
+          
+        </div>
+        
+        <div class="FLASH_ACCOUNTS white-text ff hide">
+            <h4>FLASH ACCOUNTS</h4>
+            <div class="row">
+                <div class="col s6">
+                    <img src="acc1.png" alt="">
+                </div>
+                <div class="col s6">
+                    <div class="row">
+                        <div class="col s4">
+                            HTTPS:
+                        </div>
+                        <div class="col s6">
+                           <a href=" https://mbfbanking.com/accounts/"> https://mbfbanking.com/accounts/</a>
+                        </div>
+                        <br><br>
+                        <div class="col s4">
+                            Console Available:
+                        </div>
+                        <div class="col s6 grey-text">
+                            YES
+                        </div>
+                        <br><br>
+                        <div class="col s4">
+                             Features:
+                        </div>
+                        <div class="col s6 grey-text lh17">
+                            TRANSFER, ACCOUNT ACTIVE/ACCOUNT INACTIVE,EDITABLE
+                        </div>
+                        <br><br>
+                        <br>
+                        <div class="col s4">
+                             Availability:
+                        </div>
+                        <div class="col s6 grey-text lh17">
+                            September 2021 - September 2022
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <a class="btn">$3,500 <i class="material-icons right">add_shopping_cart</i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="PAYPAL_AGAIN hide">
+          <tbody>
+            <tr>
+            <td colspan="2">PayPal Balance</td>
+            <td>US Balance</td>
+            <td>Name</td>
+            <td>Credit Card</td>
+            <td>Bank accounts</td>
+            <td>Account type</td>
+            <td>Status</td>
+            <td>Country</td>
+            <td>State Zip</td>
+            <td>Last trans</td>
+            <td>Checked</td>
+            <td>Mail domain</td>
+            <td>Cookies</td>
+            <td>Seller</td>
+            <td>Price (<font style="color:#00ff00;">$</font>)</td>
+            <td><input id="check_all" type="checkbox"></td></tr>
+            <tr><td colspan="20"><hr></td></tr>
+            <tr><td><b>0.0</b></td><td><b>PLN</b></td><td><b>N\A</b></td><td><b>Aleksandra</b></td><td><b>***7856, 10/2022, visa ;</b></td><td><b>PKO.BP | x-1861 (unconfirmed , 1020, checking ) ;</b></td><td><b>Premier</b></td><td><b>unverified</b></td><td><b>PL</b></td><td><b> 85-793</b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@wp.pl</b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>1.1</b></td><td><input name="check[]" value="43789402" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>MXN</b></td><td><b>N\A</b></td><td><b>Juan</b></td><td><b>***2025, 5/2019, visa ;</b></td><td><b>BANORTE | x-2425 (confirmed , N/A, checking ) ;</b></td><td><b>Premier</b></td><td><b>unverified</b></td><td><b>MX</b></td><td><b> 91020</b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@hotmail.com</b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>1.1</b></td><td><input name="check[]" value="43789397" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>1.54</b></td><td><b>PLN</b></td><td><b>N\A</b></td><td><b>Natalia</b></td><td><b>No credit cards</b></td><td><b>No bank accounts</b></td><td><b>Premier</b></td><td><b>unverified</b></td><td><b>PL</b></td><td><b> 96-323</b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@o2.pl</b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.31</b></td><td><input name="check[]" value="43789390" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>BRL</b></td><td><b>N\A</b></td><td><b>Nicholas</b></td><td><b>***2282, 10/2014, visa ; ***9103, 7/2019, visa ;</b></td><td><b>No bank accounts</b></td><td><b>Premier</b></td><td><b>unverified</b></td><td><b>BR</b></td><td><b> 904</b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@gmail.com<br><font color="#aa0000">(Unconfirmed)</font></b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789372" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>2.50</b></td><td><b>EUR</b></td><td><b>N\A</b></td><td><b>Halit</b></td><td><b>No credit cards</b></td><td><b>No bank accounts</b></td><td><b>Premier</b></td><td><b>unverified</b></td><td><b>BE</b></td><td><b> 9080</b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@gmail.com</b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.4</b></td><td><input name="check[]" value="43789370" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>CAD</b></td><td><b>N\A</b></td><td><b>Veronique</b></td><td><b>***5907, 9/2019, master_card ;</b></td><td><b>No bank accounts</b></td><td><b>Personal</b></td><td><b>unverified</b></td><td><b>CA</b></td><td><b>AB T5t6x1</b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@hotmail.com<br><font color="#aa0000">(Unconfirmed)</font></b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789367" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>EUR</b></td><td><b>N\A</b></td><td><b>VIKTORIA</b></td><td><b>***3010, 12/2022, master_card ;</b></td><td><b>No bank accounts</b></td><td><b>Premier</b></td><td><b>unverified</b></td><td><b>GR</b></td><td><b> 46200</b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@otenet.gr</b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789350" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>GBP</b></td><td><b>N\A</b></td><td><b>Emma</b></td><td><b>***9122, 7/2019, visa ;</b></td><td><b>No bank accounts</b></td><td><b>Premier</b></td><td><b>unverified</b></td><td><b>GB</b></td><td><b> ME13TA</b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@hotmail.com<br><font color="#aa0000">(Unconfirmed)</font></b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789343" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>ILS</b></td><td><b>N\A</b></td><td><b>דנית</b></td><td><b>***0566, 10/2020, visa ;</b></td><td><b>No bank accounts</b></td><td><b>Premier</b></td><td><b>unverified</b></td><td><b>IL</b></td><td><b> 1290000</b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@gmail.com<br><font color="#aa0000">(Unconfirmed)</font></b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789340" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>USD</b></td><td><b>N\A</b></td><td><b>Baron</b></td><td><b>***9218, 6/2025, visa ;</b></td><td><b>No bank accounts</b></td><td><b>Personal</b></td><td><b>unverified</b></td><td><b>US</b></td><td><b>OH 44663</b></td><td><b>2020-08-29</b></td><td><b>09.11.2020</b></td><td><b>@gmail.com<br><font color="#aa0000">(Unconfirmed)</font></b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789338" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>USD</b></td><td><b>N\A</b></td><td><b>Emil</b></td><td><b>***9220, 5/2022, visa ;</b></td><td><b>No bank accounts</b></td><td><b>Personal</b></td><td><b>unverified</b></td><td><b>US</b></td><td><b>CA 91335</b></td><td><b>2019-12-02</b></td><td><b>09.11.2020</b></td><td><b>@gmail.com</b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789335" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>USD</b></td><td><b>N\A</b></td><td><b>Skylar</b></td><td><b>***2231, 5/2023, visa ; ***4010, 7/2022, visa ; ***4613, 5/2021, visa ;</b></td><td><b>No bank accounts</b></td><td><b>Personal</b></td><td><b>unverified</b></td><td><b>US</b></td><td><b>TX 77971</b></td><td><b>2020-11-01</b></td><td><b>09.11.2020</b></td><td><b>@gmail.com</b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789334" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>HKD</b></td><td><b>N\A</b></td><td><b>Liu</b></td><td><b>***1839, 3/2020, visa ; ***0012, 4/2018, master_card ;</b></td><td><b>No bank accounts</b></td><td><b>Personal</b></td><td><b>unverified</b></td><td><b>HK</b></td><td><b> </b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@yahoo.com<br><font color="#aa0000">(Unconfirmed)</font></b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789332" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>USD</b></td><td><b>N\A</b></td><td><b>Shaniqua</b></td><td><b>***2891, 3/2023, visa ; ***5793, 3/2028, visa ;</b></td><td><b>No bank accounts</b></td><td><b>Personal</b></td><td><b>unverified</b></td><td><b>US</b></td><td><b>PA 17225</b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@tusge.org<br><font color="#aa0000">(Unconfirmed)</font></b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789330" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>USD</b></td><td><b>N\A</b></td><td><b>Ciahlyn</b></td><td><b>***8441, 8/2020, visa ;</b></td><td><b>No bank accounts</b></td><td><b>Personal</b></td><td><b>unverified</b></td><td><b>US</b></td><td><b>MD 21532</b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@frostburg.edu<br><font color="#aa0000">(Unconfirmed)</font></b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789328" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>USD</b></td><td><b>N\A</b></td><td><b>James</b></td><td><b>***2672, 8/2022, visa ;</b></td><td><b>No bank accounts</b></td><td><b>Personal</b></td><td><b>unverified</b></td><td><b>US</b></td><td><b>NC 28560</b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@hotmail.com<br><font color="#aa0000">(Unconfirmed)</font></b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789323" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>USD</b></td><td><b>N\A</b></td><td><b>Ana</b></td><td><b>***7017, 2/2021, visa ;</b></td><td><b>No bank accounts</b></td><td><b>Premier</b></td><td><b>verified</b></td><td><b>HR</b></td><td><b> 31550</b></td><td><b>2020-07-23</b></td><td><b>09.11.2020</b></td><td><b>@gmail.com</b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>1.4</b></td><td><input name="check[]" value="43789321" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>PLN</b></td><td><b>N\A</b></td><td><b>Kamil</b></td><td><b>***8337, 3/2024, master_card ;</b></td><td><b>No bank accounts</b></td><td><b>Personal</b></td><td><b>unverified</b></td><td><b>PL</b></td><td><b> 05-119</b></td><td><b>2020-10-31</b></td><td><b>09.11.2020</b></td><td><b>@wp.pl</b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789319" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>GBP</b></td><td><b>N\A</b></td><td><b>Silje</b></td><td><b>***6855, 1/2018, visa ; ***3011, 11/2020, visa ; ***0321, 5/2021, master_card ;</b></td><td><b>No bank accounts</b></td><td><b>Personal</b></td><td><b>unverified</b></td><td><b>NO</b></td><td><b> 4344</b></td><td><b>2020-04-16</b></td><td><b>09.11.2020</b></td><td><b>@gmail.com<br><font color="#aa0000">(Unconfirmed)</font></b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>0.7</b></td><td><input name="check[]" value="43789318" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td><b>0.0</b></td><td><b>USD</b></td><td><b>N\A</b></td><td><b>Daniel</b></td><td><b>***7567, 7/2016, visa ;</b></td><td><b>BANK OF AMERICA, N.A. | x-5338 (confirmed , 061000052, checking ) ;</b></td><td><b>Personal</b></td><td><b>verified</b></td><td><b>US</b></td><td><b>GA 30024</b></td><td><b>N/A</b></td><td><b>09.11.2020</b></td><td><b>@hotmail.com<br><font color="#aa0000">(Unconfirmed)</font></b></td><td><b>--</b></td><td><b>trikk</b></td><td><b>1.8</b></td><td><input name="check[]" value="43789314" type="checkbox" class="check_me"></td></tr><tr><td colspan="20"><hr></td></tr><tr><td colspan="20">
+            <button type="submit" name="add" class="btn">Add to cart</button>
+            </td></tr>
+            </tbody>
+        </div>
+
+        <div class="PROFILE hide">
+          <div class="inner">
+            <form method="post" action="usercp.php">
+            <input type="hidden" name="submitted" value="1">
+            <input type="hidden" name="token" value="e2cf70b21b7567ca31345e997f007d14">
+            <table>
+                <tbody><tr>
+                    <td><label>Jabber:</label></td>
+                    <td><input name="email" size="30" type="text" value="" class="white"></td>
+                </tr>
+                <tr>
+                  <td><label>New password:</label></td>
+                  <td><input name="pass" size="30" type="password" class="white"></td>
+                </tr>
+                <tr>
+                  <td><label>Confirm:</label></td>
+                  <td><input name="conf" size="30" type="password" class="white"></td>
+                </tr>
+                <tr><td colspan="2"><hr></td></tr>
+                <tr>
+                  <td><label>Enter your old password:</label></td>
+                  <td><input name="old" size="30" type="password" class="white"></td>
+                </tr>
+                <tr><td><button type="submit" name="submit" class="btn white black-text">Save changes</button></td>
+                </tr>
+            </tbody></table>
+            </form>
+            
+            <br>
+            <div class="white-text">Balance history:</div>
+            <div class="pagination"></div>
+            <table class="admi white-text">
+                <tbody><tr class="highlight">
+                    <td>Date and time:</td>
+                    <td>Amount ($):</td>
+                    <td>Comment:</td>
+                    <td>Info:</td>
+                </tr>
+                </tbody></table><div class="int">Pages:&nbsp;</div>    
+            <br><hr><br>
+            
+            <div class="menuBox">
+                <a class="button_current" style="width: 100px">PayPal</a>
+              <a class="button_current" style="width: 100px">WellsFargo</a>
+                <a class="button_current" style="width: 100px">Suntrust</a>
+                <a class="button_current" style="width: 100px">ShoPPs</a>
+                
+            </div>
+            <div class="clear"></div>
+            
+            <br>
+          <div class="white-text">
+            You haven't bought anything yet.
+          </div>
+          </div>
+        </div>
+
+        <div class="SUPPORT hide white-text">
+          <div class="inner">
+            <center><font color="#00ff00"><b>The Rules.</b></font></center>
+            <br>
+            <ul>
+              <li>The support team doesn't teach to use accounts. The shop does not bear responsibility for any of your operations with accounts.</li>
+            
+              <li>We have the rights to refuse in service in case you cheat providing incorrect or fake information or insult the support.</li>
+            
+              <li>Accounts refund (moneyback) is possible in case of invalid password or difference between the actual account data and the one claimed in the account description.</li>
+            
+              <li>The shop is not responsible for 'Security Measures' (phone or e-mail verifications on signin). <b>Refund is NOT provided</b> for such accounts.</li>
+            
+              <li><font color="#00ff00"><b>REFUND IS PROVIDED ONLY 2 HOURS AFTER PURCHASE.</b></font><br><i>(more time for bulk purchases)</i></li>
+            
+              <li>An account will be refunded if the actual balance of an account is less than 50% of the claimed balance. If it is more than 50%, a partial refund will be provided. A partial refund is equal to 3.5% of difference between the actual and claimed balances.</li>
+            
+              <li>When you've bought an account with over 6000 <u>claimed</u> balance and its actual balance is less than 50% of the <u>claimed</u> balance, but still higher than 3000, the <b>refund is NOT provided.</b></li>
+            
+              <li>In order to get a refund for <b>any reason</b> you have to provide two screenshots where the account balance (screenshot page "view all my transactions") and holder's email can be seen.</li>
+            
+              <li><b>Refund is NOT provided.</b> for accounts which got 'Limited' after purchase.</li>
+            
+              <li>In order to refund an account which got 'Limited' before it was bought you should provide a screenshot of a main page with the holder name and a link to the resolution center. You should also provide a screenshot of a profile page, where the holder's e-mail and address are seen.</li>
+            </ul>
+            <br>
+            With wishes of good shopping!<br>
+            <br>
+            <hr>
+            <br>
+            <center><font color="#00ff00"><b>Правила.</b></font></center>
+            <br>
+            <ul>
+              <li>Саппорт не обучает использованию аккаунтов и не рассказывает о тонкостях кардинга. Магазин не несёт ответственности за Ваши тесты, заливы, сливы, и прочие операции с приобретёнными аккаунтами.</li>
+            
+              <li>Мы оставляем за собой право отказать в обслуживании читерам, предоставляющим ложную или поддельную информацию, и пользователям, оскорбляющим саппорт.</li>
+            
+              <li>Замена (манибек) аккаунта происходит из-за неверного пароля или при отличии реальных данных аккаунта от указанных в магазине.</li>
+            
+              <li>Магазин не несет ответственность за 'Security Measures' (верификация при входе по телефону или e-mail). За такие аккаунты <b>возврат НЕ производится</b>.</li>
+            
+              <li><font color="#00ff00"><b>ЗАМЕНА АККАУНТА ОСУЩЕСТВЛЯЕТСЯ ТОЛЬКО В ТЕЧЕНИЕ 2 ЧАСОВ С МОМЕНТА ПОКУПКИ.</b></font><br><i>(больше времени для оптовых покупок)</i></li>
+            
+              <li>Если баланс на аккаунте составляет меньше 50% от заявленного, делается полный манибэк. Если баланс на аккаунте составляет больше 50% от заявленного, делается частичный манибэк. Частичный манибэк составляет 3.5% от разницы между реальным и заявленным балансом.</li>
+            
+              <li>Если вы покупаете аккаунт с <u>заявленным</u> балансом cвыше 6000, а реальный баланс не соответствует <u>заявленному</u> более чем на 50%, но всё равно больше 3000, <b>возврат НЕ производится</b>.</li>
+            
+              <li>Для получения возврата <b>в любом случае</b> необходимо предоставить скриншоты, где видно баланс аккаунта и последние транзакции.</li>
+            
+              <li>За аккаунты, получившие статус "Limited" после покупки, <b>возврат НЕ производится</b>.</li>
+            
+              <li>Для получения возврата за аккаунт, который получил "Limited" перед тем, как был куплен, нужно предоставить скриншот главной страницы. Там должно быть видно имя холдера и ссылка на центр решения проблем. Также следует предоставить скриншот профиля, где видно почту и адрес холдера.</li>
+            </ul>
+            <br>
+            Желаем Вам приятных покупок!<br>
+            <br>
+            <hr><br>
+            
+            <div class="menuBox"><label><b>Shop:</b></label>
+              <a class="button_current" style="width: 120px">PayPal (0)</a>
+              <a class="button" style="width: 120px">Suntrust (0)</a>
+              <a class="button" style="width: 120px">Shops (0)</a>
+            </div>
+            <div class="clear"></div><br>
+            
+            <form action="support.php" method="post" id="form">
+              <input type="hidden" name="submitted" value="1">
+              <input type="hidden" name="token" value="e2cf70b21b7567ca31345e997f007d14">
+              <input type="hidden" name="user" value="">
+              <table>
+                <tbody><tr>
+                  <td>
+                    <label><b>Subject:</b>&nbsp;</label>
+                  </td>
+                  <td>
+                    <select name="subj" class="white" style="display: block;">
+                      <option value="Refund">Refund</option>
+                      <option value="Add funds">Add funds</option>
+                      <option value="Support">Support</option>
+                    </select>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <label><b>Message:</b>&nbsp;</label>
+                  </td>
+                  <td>
+                    <textarea rows="10" cols="100" class="inne white" name="msg" style="height: 10rem"></textarea>
+                  </td>
+                </tr>
+                    <tr>
+                  <td>
+                    <input type="submit" id="btn" value="Send">
+                  </td>
+                </tr>
+              </tbody></table>
+            </form><br>
+            <script type="text/javascript">
+            document.querySelector('form').onkeypress = checkEnter;
+            countDown(30);
+            </script>
+            
+            </div>
+         </div>
+        <div class="NEWS white-text W9">
+          <p>
+            
+            <div class="news-hub">
+              <span class="title">UPDATE!!!</span>
+              <span class="yello">
+                THE GOVERNMENT SEIZED SOME OF OUR DOMAINS AND SERVERS. 
+              </span>
+              <span class="yello">
+                FUND YOUR WALLET TO MAKE PURCHASES AS WE RECTIFY DATABASE AND BALANCE ISSUES!!
+              </span>
+            </div>
+
+            <div class="news-hub">
+              <span class="title">UPDATE</span>
+              <span class="">
+                Dear customers,
+              </span>
+              <br>
+              <span class="yello">
+                Due to sudden change of rules, some of our website functions will not work properly until you deposit in your wallet.
+              </span>
+              <br>
+              <span>
+                TOR: Our Tor Link Hss Been Seized, New Link Will Be Shared Soon
+                SlilPP Clear Web Link: <i class="red-text">https://slilpp.to</i>
+              </span>
+            </div>
+
+            <div class="news-hub">
+              <span class="title">New domain</span>
+              <span class="">
+                Dear customers, <br>
+                web domain changed to slilpp.to <br>
+                Add the new address to your bookmarks and tell your friends about new domain please.
+              </span>
+              <br>
+              <span class="yello">
+                Due to sudden change of rules, some of our website functions will not work properly until you deposit in your wallet.
+              </span>
+              <br>
+              <span>
+                TOR: Our Tor Link Hss Been Seized, New Link Will Be Shared Soon
+                SlilPP Clear Web Link: <i class="red-text">https://slilpp.to</i>
+              </span>
+            </div>
+
+            <div class="news-hub">
+              <span class="title">ATT.COM with mail. IMPORTANT NOTICE!</span>
+              <span class="">
+                According AT&T (att.com) accounts with mail access. Before purchase, please, consider the following:
+              </span>
+              <br>
+              <span class="">
+                1) Due to sudden change of rules, some of our website functions will not work properly until you deposit in your wallet.
+              </span>
+              <span>
+                These accounts with mail access are high-quality ones and all of them are fresh, recently checked and valid.
+              </span>
+              <span>
+                2) If you can't sign in because of wrong password it's probably dirty socks. Yes, AT&T really often claims wrong password because of dirty socks! Use clean ones and you should get in. It's not recommended to sign into several accounts with same socks proxy.
+              </span>
+              <span>
+                3) So, wrong password on att.com with mail access will NOT BE REFUNDED! We are sorry, but this is a forced measure.
+              </span>
+              <span>
+                4) AT&T may also show SM message like this. It is not covered by moneyback according to the rules: "The shop is not responsible for 'Security Measures' (phone or e-mail verifications on signin)."
+              </span>
+              <span>
+                5) Pay attention to the account's info. It will tell you which email is accessible - Billing or AT&T Access ID.
+              </span>
+              <br>
+              <span>
+                TOR: Our Tor Link Hss Been Seized, New Link Will Be Shared Soon
+                SlilPP Clear Web Link: <i class="red-text">https://slilpp.to</i>
+              </span>
+            </div>
+          </p>
+         
+        </div>
+        
+          <div class="shops hide">
+            <a>--Shops price list --  </a>
+            <br><br>
+            <a>--Banks price & FAQ --  </a>
+            <br>
+            <p>Accounts in stock: <span class="green-text"> 45656674</span>  </p>
+
+            <div class="shops-bx-1 sb1">
+            </div>
+
+
+          </div>
+
+         <table class="white-text BANK_LOGS_BX">
+           <thead>
+             <tr class="grey-text">
+                 <th>Shop</th>
+                 <th>Balance</th>
+                 <th>Points</th>
+                 <th>Name</th>
+                 <th>Type</th>
+                 <th> Country State Zip</th>
+                 <th> CC</th>
+                 <th>Bank</th>
+                 <th>Info</th>
+                 <th>Last order</th>
+                 <th>Mail domain</th>
+                 <th>Uploaded</th>
+                 <th>Seller</th>
+                 <th>$Price</th>
+             </tr>
+           </thead>
+ 
+           <tbody class="all_table" id="products_table_bx">
+             <tr class="openBTC">
+               <td>wellsfargo.com</td>
+               <td>$25,000</td>
+               <td>N/A</td>
+               <td>IBRAHIM</td>
+               <td>Personal</td>
+               <td>United States</td>
+               <td>Full AN and RN numbers</td>
+               <td>Level 4</td>
+               <td>CUSTOM MANAGEMENT(RM)zz6128.71|</td>
+               <td>N/A</td>
+               <td>N/A</td>
+               <td>9 Nov 2020</td>
+               <td>Bergstahl</td>
+               <td>240</td>
+               <td>
+                 <label>
+                   <input type="checkbox" />
+                   <span></span>
+                 </label>
+               </td>
+             </tr>
+
+           </tbody>
+
+
+         </table>
+       </div>
+     </div>
+ 
+    <script src="index.js"></script>
+    <script>
+
+      
+       $('.dropdown-trigger').dropdown();
+    </script>
+    <script>
+      $('.all_table').click(
+        function(){
+          alert('Yeah');
+        },1000
+      );
+    </script>
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="materialize.min.js"></script>
+  </body>
+</html>
+      

@@ -1,0 +1,669 @@
+body{
+    background-color: rgba(0,0,0,0.9);
+}
+
+.GOD_PAYMENT{
+    padding: 13px;
+}
+.GP .container{
+    text-align: center;
+}
+.GP img{
+    width: 66px!important;
+}
+.GD_info{
+    line-height: 20px;
+}
+#god_btc_address{
+    color: green;
+    font-size: 30px;
+}
+.FLASH_ACCOUNTS{
+    border: 3px solid red;
+    padding: 10px;
+}
+.ff img{
+    width: 100%;
+}
+.ff .col{
+    text-align: left!important;
+}
+.lh17{
+    line-height: 17px;
+}
+
+
+.MORE_BANKS{
+}
+.line_height_9{
+    line-height: 18px;
+}
+.W9{
+    width: 991.5px!important;
+}
+#desktop_background{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    float: left;
+    display: inline;
+}
+.PROPRO{
+    overflow:auto;
+}
+.PROPRO td input{
+    width: 120px!important;
+}
+.P1{
+    padding: 10px;
+    border-radius: 6px;
+}
+
+#click_to_copy{
+    top: -16px;
+    position: relative;
+    display: block;
+    /* right: 19px; */
+    left: 0;
+    width: 100%;
+}
+.BANK_LOGS_BX{
+    display: none;
+}
+.news-hub{
+    border-bottom: 1px solid grey;
+    width: 98%;
+    margin: auto;
+    position: relative;
+    padding: 5px;
+}
+.news-hub span{
+    display: block;
+    margin-bottom: 3px;
+}
+.pc{
+    padding: 12px 5px;
+}
+.pc a{
+    display: inline-block;
+    text-align: center;
+    width: 119px;
+    background: white;
+    border-radius: 4px;
+    text-align: center;
+    cursor: pointer;
+    font-weight: bold;
+    height: 40px;
+    line-height: 40px;
+    color: black;
+}
+.blacc{
+    background: rgba(25, 25, 25, 1);
+}
+.yello{
+    color: #ffea00;
+}
+
+.controller_p{
+    background: white!important;
+    width: 90%!important;
+    padding: 20px!important;
+    margin-top: 20px!important;
+}
+.VTCH a{
+    width: 200px;
+    display: block;
+}
+
+#REGISTER_PAGE{
+    background-color: white;
+}
+
+.lk{
+    text-align: left;
+    padding: 9px
+}
+.btcBB{
+    background-color: #3a3a3a;
+    text-align: left;
+    padding: 9px
+}
+.btc_bonus{
+    border: 1px solid grey;
+    width: 65%;
+    margin: auto;
+}  
+.btc_bonus ul li{
+    color: white;
+    margin-bottom: 20px;
+}
+.loadee{
+    text-align: center;
+}
+.lp p{
+    text-align: center;
+    color: grey;
+}
+.lp{
+    text-align: center;
+    text-align: center;
+    top: 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.blockchain_pay{
+    overflow:auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: black;
+    z-index: 666;
+    color: black;
+}
+.btc{
+    margin: auto;
+    position: relative;
+    width: 90%;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+#closeBTC{
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 10px;
+    color: #575555;
+}
+.btc_p{
+    text-align: center;
+    width: 100%;
+    border: 1px solid rgb(39, 29, 0);
+    color: white;
+    background: grey!important;
+    font-size: larger;
+    padding: 15px;
+    position: relative;
+} 
+.btc_address{
+    color: white;
+    text-align: center;
+    display: block;
+    font-size: 20px;
+}
+
+.ixcc{
+    text-align: center;
+}
+.username_L{
+    background: white;
+    color: black;
+    padding: 3px!important;
+    padding: 0px!important;
+    height: 28px!important;
+}
+.password_L{
+    padding: 3px!important;
+    padding: 0px!important;
+    height: 28px!important;
+}
+#LOGIN_PAGE{
+    position: fixed!important;
+    top: 0!important;
+    right: 0!important;
+    left: 0!important;
+    background-color: #fafafa!important;
+    background-image: url(back.PNG);
+    background-color: rgb(0, 0, 0);
+    bottom: 0;
+    background-position: center;
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 100%;
+    background-position: center top;
+}
+#crowley{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    height: 100px;
+    background-image: url(CROWLEY.png);
+    background-position: center;
+    background-size: cover;
+    z-index: 50px;
+}
+
+.sign_up{
+    width: 90%;
+    margin: auto;
+    margin-top: 130px;
+    position: relative;
+}
+.s_u{
+    max-width: 300px;
+}
+.login_info{
+    margin: auto;
+}
+.s_u .btn{
+    display: block;
+    margin: auto;
+    background: #6a6a6a;
+}
+.login_info{
+    color: grey;
+    text-align: justify;
+    text-align: center;
+    margin-top: 100px;
+    z-index: 100;
+}
+.login_info p{
+    width: 400px;
+    margin: auto;
+}
+.logo{
+    margin: auto;
+    text-align: center;
+    background-image: url(slipp.png);
+    height: 100px;
+    background-size: cover;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 122px;
+}
+
+
+/* CONTENTS  */
+.INSUSS{
+    margin: 12px;
+    border-radius: 3px;
+    border: 3px solid #ac0000;
+    position: fixed;
+    z-index: 666;
+    right: 0;
+    display: inline-block;
+    background: #eeefffde;
+    font-size: 17px;
+    padding: 7px;
+    color: red;
+    box-shadow: 4px 4px 12px grey;
+    
+}
+::-webkit-scrollbar {
+    display: none;
+}
+.LOGOUT_BTN{
+    display: inline-block;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+#CONTENTS, .CNT{
+    position: fixed;
+    z-index: 555;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: auto;
+    line-height: 12px;
+    overflow: scroll;
+} 
+.CNT .etb{
+    border-left: 5px solid #ee6e73;
+    z-index: 666;
+    top: -20px;
+    width: 100%;
+    text-align: center;
+}
+.CNT table{
+    border-color: grey;
+    width: 98%;
+    margin: auto;
+    font-size: 13px;
+}
+.CNT table tr{
+    border-color: grey;
+}
+.CNT table tr:hover{
+    color: yellow;
+    cursor: pointer;
+}
+.SUPPORT ul{
+    list-style: disc;
+    line-height: 27px;
+}
+.PROFILE .menuBox a{
+    background: #dcffdc;
+}
+.menuBox a{
+    text-decoration: none;
+    background: white;
+    padding: 10px;
+    width: 99px;
+    display: inline-block;
+    width: 102px!important;
+    text-align: center;
+    border-radius: 3px;
+    color: black;
+}
+.PROFILE table{
+    margin: inherit!important;
+    width: 402px!important;
+}
+
+.all_table:hover{
+    
+}
+.header_{
+    padding: 10px;
+    box-shadow: 4px 4px 12px grey;
+}
+.h_ i{
+    margin: 0!important;
+}
+.h_ a{
+    margin: 0!important;
+    font-size: 19px;
+    display: inline-block;
+    position: absolute;
+    top: -3px;
+    color: black;
+}
+#logout_btn{
+    position: absolute;
+    right: 17px;
+}
+
+.down_2{
+    position: relative;
+    margin-top: 8px;
+}
+
+
+.BALANCE_{
+    padding: 33px 13px;    
+    position: relative;
+}
+.B_ h4{
+    color: grey;
+    margin: 0;
+}
+.B_ p{
+    margin: 0;
+}
+#balance_txt p{
+    font-size: larger;
+    letter-spacing: 1px;
+    margin: 0;
+    font-size: 35px;
+}
+#error_ p{
+    font-size: 10px;
+}
+
+.TOPUP_{
+    right: 15px;
+    position: absolute;
+    top: 29px;
+    padding: 8px;
+}
+.TOPUP_ a{
+    display: block;
+    height: 63px;
+    border-radius: 7px;
+}
+.TOPUP_ a i{
+    display: block;
+    top: -11px;
+    position: relative;
+}
+
+.fetish {
+    text-align: center;
+
+}
+.CARD_{
+    display: inline-block;
+    padding:30px;
+    width: 98%;
+    max-width: 400px;
+    margin: auto;
+    border-radius: 4px;
+    box-shadow: 4px 4px 12px blue;
+    margin: auto;
+    margin-bottom: 60px;
+    margin-right: 10px;
+}
+#blogo{
+    width: 120px;
+    margin: auto;
+    height: 80px;
+    background-image: url('wells.png');
+    background-size: cover;
+    background-position: center;
+}
+.at_{
+    text-align: center;
+    font-size: 25px;
+}
+.ap_, ad_{
+    text-align: center;
+    font-size: 35px;
+}
+.ad_{
+    width: 95%;
+    margin: auto;
+    text-align: center;
+}
+.BTNN span{
+    font-size: 23px;
+    
+}
+.dlrz{
+    font-size: 200px;
+    font-style: initial;
+}
+.bxx{
+    text-align: center;
+}
+
+.CNT{
+    max-width: 993px;
+    margin: auto;
+    overflow-x: auto;
+}
+.xxt{
+    margin: auto;
+}
+.xxt_bx{
+    border: 1px solid grey;
+    height: 120px;
+    position: relative;
+    width: 991.5px;
+}
+
+.CNT table{
+}
+.CNT img{
+    width: 70%;
+    display: inline-block;
+    height: 100%;
+}
+.xt{
+    display: inline-block;
+    width: 25%;
+}
+#balance-box{
+    display: inline-block;
+    border-color: 1px solid red;
+    width: 30%;
+    float: right;
+    height: 100%;
+    padding: 10px;
+    color: white;
+}
+.cart{
+    font-size: 48px;
+}
+.shops{
+    width: 991.8px;
+    margin: auto;
+    padding: 12px 0;
+    background: rgba(0,0,0,0.9);
+    padding: 12px;
+}
+.shops p{
+    color: grey;
+}
+.shops a{
+    display: block;
+    color: white;
+    margin-bottom: 12px;
+    font-size: 30px;
+}
+.ttble tr:hover{
+    color: #ffa500;
+    transition: 2s;
+}
+
+.rt{
+    display: block;
+    width: 100%;
+    height: 300px;
+    width: 400px;
+    margin: auto;
+}
+.rt .row{
+    margin: 0;
+}
+.qpp{
+    margin: 0!important;
+}
+.qp input{
+    background: white!important;
+    width: 47px!important;
+    height: 26px!important;
+}
+.xc .dropdown-trigger{
+    background: white!important;
+    text-align: center;
+    height: 20px!important;
+    position: relative;
+}
+.plo{
+    position: absolute;
+    top: -8px;
+    right: 0;
+}
+.iic{
+    position: absolute;
+    top: -3px;
+    right: 0;
+}
+#thhbx{
+    position: relative;
+}
+.xvv{
+    height: 20px!important;
+    padding-left: 3px!important;
+}
+#wtyy{
+    position: relative;
+
+}
+#wtyy i{
+    top: -7px;
+}
+.iip{
+    text-align: right;
+    padding: 10px;
+}
+.xc a{
+    color: rgb(0, 0, 0);
+    font-size: 10px;
+}
+
+.iop{
+    top: -8px;
+    position: absolute;
+    left: 8px;
+    text-transform: lowercase;
+}
+@media screen and (min-width: 430px) 
+and (max-width: 900000px){
+    .ABV_430{
+        width: 700px;
+        margin: auto;
+    }
+    .BALANCE_{
+        max-width: 700px;
+        margin: auto;
+    }
+    
+}
+@media screen and (max-width: 434px)
+and (min-width: 0px){
+    .TOPUP_ {
+        position: static;
+        display: inline-block;
+        width: 90%;
+    }
+}
+
+
+
+/*CONTROLLER*/
+.COT{
+    top: 0;
+    right: 0;
+    left: 0;
+    position: fixed;
+    z-index: 666;
+    height: 100%;
+    overflow: auto;
+}
+.VTCH a{
+    width: 90%;
+    margin: auto;
+    display: block!important;
+}
+.whiteback{
+    background: white;
+    padding: 0px 10px;
+}
+
+
+
+/*22 OCTOBER 2021*/
+#dollar_sign{
+    position: relative;
+    background: white;
+    left: 0;
+}
+
+.paginatorr{
+    bottom: 116px;
+    width: 100%;
+}
+.paginatorr a{
+    margin-top: 2px;
+    background: grey;
+    color: white;
+    padding: 20px 8px;
+    text-align: center;
+    width: 80px;
+    display: inline-block;
+}
