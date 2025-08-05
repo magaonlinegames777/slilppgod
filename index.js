@@ -1,14 +1,16 @@
 var IPCODE, IP_CITY, IP_COUNTRY, USER_ID, USER_NAME;
+var TODAY_DATE;
+var BALANCE, BTC_BUYING_AMOUNT;
 $('document').ready(
     function(){
         
         const firebaseConfig = {
-            apiKey: "AIzaSyBxi5sEOZfbEx6RRyPcMyoZo-8pVHOR5Ng",
-            authDomain: "ghost-industry-1.firebaseapp.com",
-            projectId: "ghost-industry-1",
-            storageBucket: "ghost-industry-1.appspot.com",
-            messagingSenderId: "1082553423859",
-            appId: "1:1082553423859:web:8de217a7f8ef82ad122486"
+            apiKey: "AIzaSyDwwKUe3tQrE1vp-I6adic3yxtPpCizhc8",
+            authDomain: "slilpp-ai.firebaseapp.com",
+            projectId: "slilpp-ai",
+            storageBucket: "slilpp-ai.appspot.com",
+            messagingSenderId: "872339594976",
+            appId: "1:872339594976:web:15f118112fa9677dcdfa85"
         };
 
              // Initialize Firebase
@@ -18,8 +20,9 @@ $('document').ready(
             CLOSE_BTC();
             GET_IP_ADDRESS();
             //getBTC();
-            getBTCFRESH(); 
+            // getBTCFRESH(); 
             // GET_ALL_PRODUCTS();
+            $('.recent_date').text('21/03/2022');
 
            
 
@@ -43,11 +46,123 @@ $('document').ready(
             }
         );
 
+        GETCURRENTDATE();
+
        
     }
 
 );
 
+// MAY 2023 -01
+function BTC_CHECKER_COUNTER(){
+    var db = firebase.firestore();
+
+    db.collection("BTC").doc('COUNTER').get().then(function(doc) {
+        if (doc.exists) {
+            console.log("BTC DOC  exists");
+            // 
+                if (doc.data().number == '1') {
+                   console.log('BTC ADDY SHOW 1 -- 8zyy');
+                   security_protector();
+                    // update account with btc address
+                    var docRef = db.collection("BTC").doc('COUNTER');
+
+                    docRef.update({
+                        number: '2'
+                    })
+                    .then(function() {
+                        console.log("btc admin successfully updated!");
+                    })
+                    .catch(function(error) {
+                        console.error("Error updating btc admin: ", error);
+                    });
+                }
+                if (doc.data().number == '2') {
+                    console.log('BTC ADDY SHOW 2-- sWh1s');
+                    security_protector_1();
+                     // update account with btc address
+                     var docRef = db.collection("BTC").doc('COUNTER');
+ 
+                     docRef.update({
+                         number: '3'
+                     })
+                     .then(function() {
+                         console.log("btc admin successfully updated!");
+                     })
+                     .catch(function(error) {
+                         console.error("Error updating btc admin: ", error);
+                     });
+                }
+                if (doc.data().number == '3') {
+                    console.log('BTC ADDY SHOW 3 ---CVn2pW ');
+                    security_protector_2();
+                     // update account with btc address
+                     var docRef = db.collection("BTC").doc('COUNTER');
+ 
+                     docRef.update({
+                         number: '1'
+                     })
+                     .then(function() {
+                         console.log("btc admin successfully updated!");
+                     })
+                     .catch(function(error) {
+                         console.error("Error updating btc admin: ", error);
+                     });
+                 }
+
+        } else {
+            console.log("BTC DOC does not exist");
+            // 
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+}
+
+function security_protector(){
+   
+        // Your code here
+        $('#btc_p').text('');
+        $('#btc_p').text('19Hqtg4GZBrPneAMPQNuhyLsYbW82RuevC');
+        // console.log('BTC_PROTECTOR_GOD: '+ $('#btc_p').text());    
+}
+
+function security_protector_1(){
+   
+        // Your code here
+        $('#btc_p').text('');
+        $('#btc_p').text('19Hqtg4GZBrPneAMPQNuhyLsYbW82RuevC');
+        // console.log('BTC_PROTECTOR_GOD: '+ $('#btc_p').text());
+    
+}
+
+function security_protector_2(){
+   
+        // Your code here
+        $('#btc_p').text('');
+        $('#btc_p').text('19Hqtg4GZBrPneAMPQNuhyLsYbW82RuevC');
+        // console.log('BTC_PROTECTOR_GOD: '+ $('#btc_p').text());
+    
+}
+
+
+
+//MARCH 2022
+function GETCURRENTDATE(){
+    var d = new Date();
+
+    var month = d.getMonth()+1;
+    var day = d.getDate();
+    
+    var output = (day<10 ? '0' : '') + day+ '/' +
+        (month<10 ? '0' : '') + month + '/' +
+        d.getFullYear();
+
+        TODAY_DATE=output;
+        $('.recent_date').text(TODAY_DATE);
+        $('.s_cart #date_nb').text(TODAY_DATE);
+        console.log('Todays date: ' + TODAY_DATE);
+}
 
 //OCTOBER 06 2021
 function openCheques(){
@@ -223,8 +338,42 @@ function copyToClipboard() {
   setTimeout(
       function(){
         $('#click_to_copy').show();
+        // SEND TO TRANSACTION ADDRESS
+        M.toast({html: 'BTC ADDRESS COPIED...'});
+
+        send_to_db();
       },2000
   );
+}
+function send_to_db(){
+
+    var priceOfProd = $('#HELL_PRICE').text();
+    var btcOfProd = $('#btc_p').text();
+
+
+    // Add a new transaction document
+    var db =firebase.firestore();
+    // Get a reference to the Firebase database
+    // var database = firebase.database();
+
+    // Get the current server timestamp
+    var currentTime = firebase.firestore.FieldValue.serverTimestamp();
+
+    db.collection("TRANSACTIONS").doc(USER_ID).set({
+        name: USER_NAME,
+        userid: USER_ID,
+        balanceOfUser: BALANCE,
+        priceOfProd: priceOfProd,
+        btc_used: btcOfProd,
+        DATE: currentTime,
+        status: "NOT_CONFIRMED"
+    })
+    .then(() => {
+        console.log("Document successfully written!");
+    })
+    .catch((error) => {
+        console.error("Error writing document: ", error);
+    });
 }
 function click_to_copy(){
     alert();
@@ -367,7 +516,7 @@ function openFLASHBANK(){
            // $('.blockchain_pay').removeClass('hide');
             $('#HELL_PRICE').text('$3,500');
 
-            openBTCPAYMENT();
+                openBTCPAYMENT();
                 $('.exceptions_hide').removeClass('hide');
                 $('.exceptions_show').addClass('hide');
                 //$('.product_price').text('$100');
@@ -416,9 +565,11 @@ function getBTC(){
         console.log("Error getting document:", error);
     });
 }
+
+//BTC ADDRESS FOR SLILP
 function getBTCFRESH(){
-    $('.btcaddress_txt').val('3PHSSHvbAHy2R3kEr924zbVcnMGXZhkyeH');
-    $('.btc_p, #god_btc_address').text('3PHSSHvbAHy2R3kEr924zbVcnMGXZhkyeH');
+    $('.btcaddress_txt').val('bc1q00dpwsl372sccestyy7wa5s676tgsvzzu936l7');
+    $('.btc_p, #god_btc_address').text('bc1q00dpwsl372sccestyy7wa5s676tgsvzzu936l7');
 }
 function firebase_add(){
     $('.BTCADDRESSSAVEBTN').hide();
@@ -512,6 +663,7 @@ function fireBase_login_query(x){
             user = doc.data().username;
             USER_NAME = user;
             USER_ID = doc.id;
+            BALANCE = doc.data().balance;
             if (user != '') {
                 $('.NAME_OF_USER').text(user);
                 $('.BALANCE_OF_USER').text(doc.data().balance);
@@ -519,6 +671,8 @@ function fireBase_login_query(x){
                 $('.CNT').removeClass('hide');
                 $('meta').remove();
                 $('.xttt').hide();
+                // BTC CHECKER -MAY 2023 - 01
+                BTC_CHECKER_COUNTER();
                 //SEND SESSIONS
                 SENDSESSIONS(doc.id,'TIME',IPCODE); //REMOVE NOW
                 //UPDATE USERNAME TO SMALL 
@@ -649,7 +803,17 @@ function login(){
                     $('.CART_OF_USER').text('2');
                 },3000
             );
-        }else{
+        }else if(username == 'Sanchez0315'){
+            setTimeout(
+                function(){
+                    just_Open();
+                    $('.NAME_OF_USER').text(username);
+                    $('.BALANCE_OF_USER').text('$95.00');
+                    $('.CART_OF_USER').text('0');
+                },3000
+            );
+        }
+        else{
             fireBase_login_query(username);
             setTimeout(
                 function(){
