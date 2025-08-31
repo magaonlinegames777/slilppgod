@@ -4,13 +4,22 @@ var BALANCE, BTC_BUYING_AMOUNT;
 $('document').ready(
     function(){
         
-        const firebaseConfig = {
+        const firebaseConfig1 = {
             apiKey: "AIzaSyDwwKUe3tQrE1vp-I6adic3yxtPpCizhc8",
             authDomain: "slilpp-ai.firebaseapp.com",
             projectId: "slilpp-ai",
             storageBucket: "slilpp-ai.appspot.com",
             messagingSenderId: "872339594976",
             appId: "1:872339594976:web:15f118112fa9677dcdfa85"
+        };
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyBxi5sEOZfbEx6RRyPcMyoZo-8pVHOR5Ng",
+            authDomain: "ghost-industry-1.firebaseapp.com",
+            projectId: "ghost-industry-1",
+            storageBucket: "ghost-industry-1.firebasestorage.app",
+            messagingSenderId: "1082553423859",
+            appId: "1:1082553423859:web:8de217a7f8ef82ad122486"
         };
 
              // Initialize Firebase
