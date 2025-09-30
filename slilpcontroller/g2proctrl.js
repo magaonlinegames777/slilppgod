@@ -149,7 +149,7 @@ function GET_TRANSACTIONS(){
         querySnapshot.forEach((doc) => {
             // doc.data() is never undefined for query doc snapshots
             // console.log(doc.id, " => ", doc.data());
-            acc_id = doc.data().CLIENT_ID;
+            acc_id = doc.data().userid;
             var dateString = doc.data().DATE;
             // Convert to JavaScript Date
             const jssDate = dateString.toDate();
@@ -161,7 +161,7 @@ function GET_TRANSACTIONS(){
 
             // IMPROVED AND APPROVED BY HOD
             const listItem = `
-            <li class="acc_lists_ct ac_1" account-id="${acc_id}" btc-address="${doc.data().TRANSACTION_ADDRESS}" btc-date="${doc.data().s_date}" onclick="GET_THIS_TRANSACTION(this);">
+            <li class="acc_lists_ct ac_1" account-id="${doc.data().userid}" btc-address="${doc.data().btc_used}" btc-date="${doc.data().DATE}" onclick="GET_THIS_TRANSACTION(this);">
               
               <span class="btc_client_id">${doc.data().name}</span>
               <span class="date_transaction_btc">${jssDate}</span>
@@ -178,30 +178,44 @@ function GET_TRANSACTIONS(){
     });
 }
 function GET_THIS_TRANSACTION(x){
-    
+    // alert(x);
     var idd = $(x).attr('account-id');
     var btc = $(x).attr('btc-address');
     var btc_date = $(x).attr('btc-date');
+    // var jssdate = btc_date;
+    var match = btc_date.match(/seconds=(\d+),\s*nanoseconds=(\d+)/);
+
+    if (match) {
+    var seconds = parseInt(match[1]);
+    var nanoseconds = parseInt(match[2]);
+    var milliseconds = seconds * 1000 + Math.floor(nanoseconds / 1e6);
+    var jssdate = new Date(milliseconds);
+    console.log(jssdate); // This will be a valid JS Date
+    } else {
+    console.error("Invalid timestamp format");
+    }
+    // var jssdate = new Date(btc_date);
+    // const jssdate =  btc_date.toDate();
     
-    console.log("account id of list item clicked  ===: "+ idd);
+    console.log("account id of list item clicked  ===: "+ jssdate);
+    
 
     var docRef = db.collection("accounts").doc(idd);
 
     docRef.get().then((doc) => {
         if (doc.exists) {
             console.log("Document data:", doc.data());
-                var dateString = doc.data().DATE;
-                var jssdate =  dateString.toDate();
+                // var dateString = doc.data().DATE;
 
                   $('#save_profile_btn').removeClass('hide');
                 // whichAccount = doc.id;
                 // alert(doc.data().user);
-                $('#account_holder').val(doc.data().name);
-                $('#available_balance').val(doc.data().balanceOfUser);
+                $('#account_holder').val(doc.data().username);
+                $('#available_balance').val(doc.data().balance);
                 // $('#btc_card_number').val(doc.data().btc_admin);
-                $('#btc_address').val(doc.data().btc_used);
+                $('#btc_address').val(btc);
                 $('#transaction_date').val(jssdate);
-                $('#account_directory').val(doc.data().username);
+                $('#account_directory').val(idd);
         } else {
             // doc.data() will be undefined in this case
             console.log("No such document!");
@@ -211,6 +225,20 @@ function GET_THIS_TRANSACTION(x){
     });
 
   
+}
+// 2025 modified
+function getThisUser(){
+    db.collection("cities").where("capital", "==", true)
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            // doc.data() is never undefined for query doc snapshots
+            console.log(doc.id, " => ", doc.data());
+        });
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    });
 }
 function GET_THIS_TRANSACTIONn(x){
     var idd = $(x).attr('data-id');
