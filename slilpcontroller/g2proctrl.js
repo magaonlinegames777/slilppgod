@@ -305,34 +305,17 @@ function SAVE_UPDATE(){
     var acc_dir= $('#account_directory').val();
     var balance = $('#available_balance').val();
 
+    
     // check if btc_admin is available
     var acc_dir= $('#account_directory').val();
     var firestore = firebase.firestore();
     var docRef = firestore.collection("accounts").doc(acc_dir);
     docRef.get()
-      .then(function(doc) {
+    .then(function(doc) {
         if (doc.exists) {
-            if (doc.data().btc_admin == '1') {
-                // update to two
-                var number = '1';
-                UPDATE_BTC_COUNTER(number);
-                update_user_account(acc_dir,balance);
-                console.log('BTC UPDATED LOGS: '+number);
-            }
-            if (doc.data().btc_admin == '2') {
-                // update to three
-                var number = '2';
-                UPDATE_BTC_COUNTER(number);
-                update_user_account(acc_dir,balance);
-                console.log('BTC UPDATED LOGS: '+number);
-
-            }if (doc.data().btc_admin == '3') {
-                // update to 1
-                var number = '3';
-                UPDATE_BTC_COUNTER(number);
-                update_user_account(acc_dir,balance);
-                console.log('BTC UPDATED LOGS: '+number);
-            }
+            alert(acc_dir);
+            update_user_account(acc_dir,balance);
+          
         } else {
           console.error("No such document");
         }
