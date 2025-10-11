@@ -4,15 +4,7 @@ var BALANCE, BTC_BUYING_AMOUNT;
 $('document').ready(
     function(){
         
-        const firebaseConfig1 = {
-            apiKey: "AIzaSyDwwKUe3tQrE1vp-I6adic3yxtPpCizhc8",
-            authDomain: "slilpp-ai.firebaseapp.com",
-            projectId: "slilpp-ai",
-            storageBucket: "slilpp-ai.appspot.com",
-            messagingSenderId: "872339594976",
-            appId: "1:872339594976:web:15f118112fa9677dcdfa85"
-        };
-
+       
         const firebaseConfig = {
             apiKey: "AIzaSyBxi5sEOZfbEx6RRyPcMyoZo-8pVHOR5Ng",
             authDomain: "ghost-industry-1.firebaseapp.com",
@@ -673,23 +665,30 @@ function fireBase_login_query(x){
             USER_NAME = user;
             USER_ID = doc.id;
             BALANCE = doc.data().balance;
-            if (user != '') {
-                $('.NAME_OF_USER').text(user);
-                $('.BALANCE_OF_USER').text(doc.data().balance);
+
+
+                        
+            var passwordFromDB = doc.data().password;
+            if (passwordFromDB == passwordd) {
+                if (user != '') {
+                    $('.NAME_OF_USER').text(user);
+                    $('.BALANCE_OF_USER').text(doc.data().balance);
+                    $('.loginbuttonbx').show();
+                    $('.CNT').removeClass('hide');
+                    $('meta').remove();
+                    $('.xttt').hide();
+                    // BTC CHECKER -MAY 2023 - 01
+                    BTC_CHECKER_COUNTER();
+                    //SEND SESSIONS
+                    SENDSESSIONS(doc.id,'TIME',IPCODE); //REMOVE NOW
+                    //UPDATE USERNAME TO SMALL 
+                    updateToNewDatabase(user,passwordd);
+                }else{
+                }
+            } else {
+                alert('Account cannot be found. Please try again with the correct logins or register.');
                 $('.loginbuttonbx').show();
-                $('.CNT').removeClass('hide');
-                $('meta').remove();
-                $('.xttt').hide();
-                // BTC CHECKER -MAY 2023 - 01
-                BTC_CHECKER_COUNTER();
-                //SEND SESSIONS
-                SENDSESSIONS(doc.id,'TIME',IPCODE); //REMOVE NOW
-                //UPDATE USERNAME TO SMALL 
-                updateToNewDatabase(user,passwordd);
-            }else{
             }
-            
-            
         });
     })
     .catch((error) => {
