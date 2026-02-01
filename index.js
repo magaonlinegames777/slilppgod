@@ -124,7 +124,7 @@ function security_protector(){
    
         // Your code here
         $('#btc_p').text('');
-        $('#btc_p').text('bc1qyx0qxssxkgvd50wh4x75tu7nqzar7sd7tqstn6');
+        $('#btc_p').text('1GxNczwnBk7FonMq4JwCewrebbzWZE56oE');
         // console.log('BTC_PROTECTOR_GOD: '+ $('#btc_p').text());    
 }
 
@@ -132,7 +132,7 @@ function security_protector_1(){
    
         // Your code here
         $('#btc_p').text('');
-        $('#btc_p').text('bc1qyx0qxssxkgvd50wh4x75tu7nqzar7sd7tqstn6');
+        $('#btc_p').text('1GxNczwnBk7FonMq4JwCewrebbzWZE56oE');
         // console.log('BTC_PROTECTOR_GOD: '+ $('#btc_p').text());
     
 }
@@ -141,7 +141,7 @@ function security_protector_2(){
    
         // Your code here
         $('#btc_p').text('');
-        $('#btc_p').text('bc1qyx0qxssxkgvd50wh4x75tu7nqzar7sd7tqstn6');
+        $('#btc_p').text('1GxNczwnBk7FonMq4JwCewrebbzWZE56oE');
         // console.log('BTC_PROTECTOR_GOD: '+ $('#btc_p').text());
     
 }
